@@ -111,10 +111,7 @@ export default function Navbar({ email }) {
 
                 <MenuItem>
                   <a href="#" className=" font-semibold">
-                    <Button
-                      classname="text-red-500"
-                      onClick={handleLogout}
-                    >
+                    <Button classname=" text-red-600" onClick={handleLogout}>
                       Logout
                     </Button>
                   </a>
