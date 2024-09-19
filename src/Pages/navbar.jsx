@@ -21,12 +21,11 @@ const navigation = [
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
-}
+} 
 
-export default function Navbar({ email }) {
+export default function Navbar({ username }) {
   const handleLogout = () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
+    localStorage.removeItem("token");
     window.location.href = "/login";
   };
   return (
@@ -101,17 +100,17 @@ export default function Navbar({ email }) {
               </div>
               <MenuItems
                 transition
-                className="absolute right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                className="absolute flex flex-col right-0 z-10 mt-2 w-64 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
               >
                 <MenuItem>
-                  <a href="#" className="h-10 px-6 font-semibold">
-                    {email}
+                  <a href="#" className="h-full px-6 py-2 font-semibold">
+                    {username}
                   </a>
                 </MenuItem>
 
                 <MenuItem>
                   <a href="#" className=" font-semibold">
-                    <Button classname=" text-red-600" onClick={handleLogout}>
+                    <Button classname=" text-red-500" onClick={handleLogout}>
                       Logout
                     </Button>
                   </a>

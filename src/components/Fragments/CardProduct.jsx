@@ -24,9 +24,9 @@ const Body = (props) => {
     <div className="px-5 pb-5 h-full">
       <a href="">
         <h5 className="text-xl font-semibold tracking-tight text-white">
-          {name}
+          {name.substring(0, 50)}
         </h5>
-        <div className="text-m text-white">{children}</div>
+        <div className="text-m text-white">{children.substring(0, 200)}</div>
       </a>
     </div>
   );
@@ -38,8 +38,8 @@ const Footer = (props) => {
   return (
     <div className="flex item-center justify-between p-5">
       <span className="text-2xl font-bold text-white">
-        Rp{" "}
-        {price.toLocaleString("id-ID", { styles: "currency", currency: "IDR" })}
+        $
+        {price.toLocaleString("id-ID", { styles: "currency", currency: "USD" })}
       </span>
       <Button classname="bg-blue-600" onClick={() => addToCart(id)}>
         Add To Cart
